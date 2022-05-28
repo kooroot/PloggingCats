@@ -37,6 +37,8 @@ async function connect() {
     await check_status();
 }
 
+// async function 
+
 async function check_status() {
     const myContract = new caver.klay.Contract(ABI, CONTRACTADDRESS);
     await myContract.methods.mintingInformation().call()
