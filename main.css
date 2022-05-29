@@ -27,6 +27,15 @@
     --base1: hsl(var(--base1-h), 6.6%, 76.1%);
     --base2: hsl(var(--base2-h), 4.4%, 82.4%);
   }
+
+  h1 {
+    position: fixed;
+    text-align: center;
+  }
+  .img{
+    width: 200px;
+    text-align: center;
+  }
   
   body {
     overflow: hidden;
