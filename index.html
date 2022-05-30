@@ -2,25 +2,29 @@
 <html lang="ko">
 
 <head>
-	<link rel="stylesheet" href="./main.css">
+	<link rel="stylesheet" href="./css/main.css">
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Plogging Cats Minting</title>
 	<script src="config.js"></script>
 	<script src="mintScript.js"></script>
+	<script src="backimg.js" type="text/javascript"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bignumber.js/8.0.2/bignumber.js" integrity="sha512-XQDG6H87RgMf+aNFwDPCUcFwUf3t9liyqN/2BkJ8KGixupbjPwQHNhypNA972mLIkg4KPo4lkGmqAf3yfDz8hw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<style>		
+	</style>
 </head>
 
-<body>
+<body class="image_styles">
+	<script>init();</script>
+	<img id="bgImage" border="10">
 	<div id="app">
-		<link rel="stylesheet" herf="/css/styles.css">
 		<div class="page">
 			<header>
 				<h1>
-					<img src="logo.png" alt="pc">
+					<img src="./img/logo.png" alt="pc" float="center">
 				</h1>
-				<nav class="" id="Navbar">
+				<nav class="navbar mnb" id="Navbar">
 					<ul class="nav">
 					</ul>
 				</nav>
@@ -29,27 +33,58 @@
 				</div>
 			</header>
 		</div>
-	</div>
+		<main role="main">
+			<div class="main_page">
+				<section id = "block">
+					<div class="title">
+						<h2>Plogging Cats MINTING INFO</h2>
+					</div>
+					<div class="block_container">
+						<p id="blockNubmer">현재 블록: #00000000</p>
+						<p id="mintStartBlockNumber">민팅 시작 블록: #00000000</p>
+						<p id="mintPrice">민팅 가격: 0 KLAY</p>
+						<p id="mintLimitPerBlock">트랜잭션당 최대 수량: 0개</p>
+					</div>
+					<button class="custom-btn btn-7" onclick="location.href='https://www.klaytnfinder.io/'">현재 블록넘버 확인 </a></button><br>
+				</section>
+				<hr />
+				<section>
+					<div class="balance">
+						<h2>MY WALLET</h2>
+						<p id="myWallet">지갑주소: 연결되지 않음</p>
+						<p id="myKlay">잔액: 연결되지 않음</p>
+					</div>
+				</section>
+				<hr />
+				<section id = "mint">
+					<!-- <div class = "mint_box">
+						<h2>MINT</h2>
+						<p id="mintCnt">0 / 0</p>
+						<label for="amount">민팅 수량</label>
+						<input type="number" id="amount" name="amount" min="1" max="3" value="1">
+						<button onclick="publicMint()">민팅</button>
+					</div> -->
+					<div class="mint_box">
+						<h2>MINT</h2>
+						<form>
+							<div class="count-box">
+							<p id="mintCnt">0 / 0</p>
+							<label for="amount">민팅 수량</label>
+							<input type="number" id="amount" name="amount" min="1" max="3" value="1">
+							</div>
+							<a href="#">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							민팅
+							</a>
+						</form>
+						</div>
+				</section>
 
-	<h2>Plogging Cats MINTING INFO</h2>
-	<p id="blockNubmer">현재 블록: #00000000</p>
-	<p id="mintStartBlockNumber">민팅 시작 블록: #00000000</p>
-	<p id="mintPrice">민팅 가격: 0 KLAY</p>
-	<p id="mintLimitPerBlock">트랜잭션당 최대 수량: 0개</p>
-	<button class="custom-btn btn-7" onclick="location.href='https://scope.klaytn.com/'">현재 블록넘버 확인하기1(Klaytnscope)</a></button><br>
-	<button class="custom-btn btn-7" onclick="location.href='https://klayswap.com/'">현재 블록넘버 확인하기2(Klayswap)<br></a></button><br>
-	<hr/>
-	<h2>MY WALLET</h2>
-	<button class="custom-btn btn-5" onclick="connect()">카이카스 지갑연결</button>
-	<p id="myWallet">지갑주소: 연결되지 않음</p>
-	<p id="myKlay">잔액: 연결되지 않음</p>
-	<hr/>
-	<h2>MINT</h2>
-	<p id="mintCnt">0 / 0</p>
-	<label for="amount">민팅 수량</label>
-	<input type="number" id="amount" name="amount" min="1" max="3" value="1">
-	<button onclick="publicMint()">민팅</button>
-	<hr/>
+			</div>
+	</div>
 	<script>
 		document.addEventListener("DOMContentLoaded", async function (event) {
 			const accounts = await klaytn.enable();
